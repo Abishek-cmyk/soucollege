@@ -1,0 +1,141 @@
+/* =========================
+   GLOBAL
+========================= */
+body {
+    font-family: "Times New Roman", Times, serif;
+    background: #f5f7fb;
+    margin: 0;
+    padding: 30px 15px;
+    line-height: 1.7;
+    color: #000000;
+}
+
+/* =========================
+   MAIN HEADING (BLUE)
+========================= */
+.main-heading {
+    text-align: center;
+    color: #003366;
+    font-size: 32px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-weight: bold;
+}
+
+/* =========================
+   SUB HEADING (RED)
+========================= */
+.sub-heading {
+    color: #c40000;
+    font-size: 22px;
+    margin: 25px 0 18px;
+    padding-left: 12px;
+    border-left: 5px solid #003366;
+    font-weight: bold;
+}
+
+/* =========================
+   TABLE FIXED ALIGNMENT
+========================= */
+.po-table {
+    width: 95%;
+    margin: 0 auto 40px auto;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+    table-layout: fixed; /* FIXED LAYOUT */
+    border: none; /* REMOVE TABLE BORDER */
+}
+
+/* Header */
+.po-table th {
+    background: #003366;
+    color: #ffffff;
+    padding: 14px;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    border: none; /* REMOVE HEADER BORDER */
+}
+
+/* Data cells */
+.po-table td {
+    padding: 12px 15px;
+    font-size: 15px;
+    color: #000000;
+    vertical-align: middle; /* CENTER VERTICALLY */
+    line-height: 1.8;       /* INCREASE LINE SPACING */
+    word-wrap: break-word;   /* BREAK LONG TEXT */
+    border: none;            /* REMOVE CELL BORDER */
+}
+
+/* Programme Name column CENTER */
+.po-table td:first-child,
+.po-table th:first-child {
+    width: 50%;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Course Name column LEFT */
+.po-table td:last-child,
+.po-table th:last-child {
+    width: 50%;
+    text-align: left;
+}
+
+/* Zebra rows */
+.po-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* SUBTLE ZEBRA COLOR */
+}
+
+/* Hover */
+.po-table tr:hover {
+    background-color: #eef3ff;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .main-heading {
+        font-size: 26px;
+    }
+
+    .sub-heading {
+        font-size: 20px;
+    }
+
+    .po-table th,
+    .po-table td {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* =========================
+   PRINT FRIENDLY
+========================= */
+@media print {
+    body {
+        background: #ffffff;
+        padding: 0;
+        margin: 0;
+    }
+
+    .po-table {
+        box-shadow: none;
+    }
+
+    .main-heading {
+        color: #000000;
+    }
+
+    .sub-heading {
+        color: #000000;
+        border-left-color: #000000;
+    }
+}

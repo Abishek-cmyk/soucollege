@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Committees — Sourashtra College</title>
+  <style>
+    :root{
+      --maroon:#8b1d1d;
+      --muted:#666;
+      --card-shadow: 0 6px 20px rgba(10,15,25,0.06);
+      --max-width:1200px;
+      --gap:22px;
+      --radius:10px;
+      --font-sans: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--font-sans);
+      background:#f6f7f9;
+      color:#222;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* Header */
+    header{
+      background:var(--maroon);
+      color:#fff;
+      padding:18px 12px;
+      text-align:center;
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+    header h1{ margin:0; font-size:22px; letter-spacing:1px; }
+
+    /* Page container */
+    .page {
+      max-width:var(--max-width);
+      margin:28px auto;
+      padding:0 18px 60px;
+    }
+
+    .intro{
+      text-align:center;
+      margin-bottom:20px;
+      color:var(--muted);
+    }
+
+    /* Grid of cards */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--gap);
+    }
+
+    /* card */
+    .card{
+      background: white;
+      padding:18px;
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      min-height:120px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .card:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(10,15,25,0.12);
+    }
+
+    .card h3{
+      margin:0 0 8px;
+      font-size:16px;
+      color: var(--maroon);
+      text-decoration: underline;
+    }
+
+    .card ul{
+      margin:0;
+      padding-left:18px;
+      line-height:1.55;
+      font-size:14px;
+      color:#333;
+    }
+
+    .card p{ margin:0; line-height:1.6; color:#333; font-size:14px; }
+
+    /* colored card variants */
+    .card.color1{ background: #fff9ec; } /* warm */
+    .card.color2{ background: #eef8ff; } /* blue */
+    .card.color3{ background: #eefdef; } /* green */
+    .card.color4{ background: #fff0f0; } /* pink */
+    .card.color5{ background: #faf5ff; } /* lilac */
+
+    /* Footer */
+    footer{
+      background:var(--maroon);
+      color:#fff;
+      padding:14px 12px;
+      text-align:center;
+      margin-top:28px;
+    }
+
+    /* Responsive */
+    @media (max-width:1100px){
+      .grid{ grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width:680px){
+      header h1{ font-size:18px; }
+      .grid{ grid-template-columns: 1fr; }
+      .page{ padding-bottom:30px; }
+    }
+
+    /* small helper for grouped items (three columns inside a card) */
+    .cols-3{ display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; align-items:start; }
+    .cols-3 > div{ padding-right:6px; }
+    @media (max-width:740px){ .cols-3{ grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>SOURASHTRA COLLEGE — COMMITTEES</h1>
+  </header>
+
+  <main class="page">
+    <p class="intro">All committees of the college are listed below. Click any item to copy or reflow as needed.</p>
+
+    <div class="grid">
+
+      <!-- Row 1 -->
+      <div class="card color1">
+        <h3>Calendar Committee</h3>
+        <ul>
+          <li>Dr. G.G. Bhuvaneswari (Convener)</li>
+          <li>Thiru. T.M. SathishBabu (Member)</li>
+        </ul>
+      </div>
+
+      <div class="card color2">
+        <h3>Magazine Committee</h3>
+        <ul>
+          <li>Dr. S. Bhuvaneswari (Convener)</li>
+          <li>Tmt. K. Subashini (Member)</li>
+          <li>Dr. K. Subbulakshmi (Member)</li>
+          <li>M. Amirthavarshini (Member)</li>
+        </ul>
+      </div>
+
+      <div class="card color3">
+        <h3>Attendance Committee</h3>
+        <ul>
+          <li>Dr. V. Sathiyendiran (Convener)</li>
+          <li>Thiru. T.M. Sathishbabu (Member)</li>
+        </ul>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="card color2">
+        <h3>Internal Test Committee</h3>
+        <ul>
+          <li>Dept. of Economics</li>
+          <li>Dr. S. Lakshmanamoorthy (Convener)</li>
+          <li>Faculty of the dept. (Member)</li>
+        </ul>
+      </div>
+
+      <div class="card color1">
+        <h3>Discipline Committee</h3>
+        <ul>
+          <li>Principal</li>
+          <li>Preliminary Meet – Concerned Department (Member)</li>
+          <li>Final Meet - All Heads of the Department</li>
+          <li>NCC &amp; All NSS Officers</li>
+        </ul>
+      </div>
+
+      <div class="card color3">
+        <h3>Timetable Committee</h3>
+        <ul>
+          <li>Thiru. K.N. Ganesh Babu (Convener)</li>
+          <li>Dr. S.S. Suganthy (Member)</li>
+        </ul>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="card color3">
+        <h3>Sports Committee</h3>
+        <ul>
+          <li>Principal</li>
+          <li>Tmt. D.V. Jeyanthi (Member)</li>
+          <li>Dr. T.R. Jeevapriya (Member)</li>
+          <li>Dr. M. Balaji (Member)</li>
+          <li>Dr. R.R. Vishnupriya (Member)</li>
+          <li>Dr. N.R. Senthil Kumar (Member)</li>
+        </ul>
+      </div>
+
+      <div class="card color5">
+        <h3>Parent Teachers Association</h3>
+        <ul>
+          <li>Principal (Convener)</li>
+          <li>Tmt. K.S. Mahalakshmi (Co-ordinator)</li>
+          <li>Dr. K. MuthamilSelvi (Member)</li>
+        </ul>
+      </div>
+
+      <div class="card color4">
+        <h3>Placement Cell</h3>
+        <ul>
+          <li>Tmt. D.V. Jeyanthi (Placement Officer)</li>
+          <li>Dr. K.M. Kavitha (Member)</li>
+          <li>Dr. M.P. Ganesan (Member)</li>
+          <li>Dr. N.R. Senthilkumar (Member)</li>
+          <li>Dr. T.T. Karthik (Member)</li>
+          <li>Dr. S.K. Kanchana (Member)</li>
+          <li>Dr. K.G. Raja SabarishBabu (Member)</li>
+          <li>Dr. G. ChinnaDurai (Member)</li>
+          <li>Heads of the Department (Member)</li>
+        </ul>
+      </div>
+
+      <!-- Row 4 -->
+      <div class="card color1">
+        <h3>Dean — Co-Curricular Activities</h3>
+        <ul>
+          <li>Dr. G. Kalaivani — Dean</li>
+        </ul>
+      </div>
+
+      <div class="card color2">
+        <h3>Red Ribbon Club</h3>
+        <ul>
+          <li>Dr. G. Kalaivani (Co-ordinator)</li>
+        </ul>
+      </div>
+
+      <div class="card color3">
+        <h3>NCC Care Taker</h3>
+        <ul>
+          <li>Dr. T.S. Manikandan</li>
+        </ul>
+      </div>
+
+      <!-- Row 5 -->
+      <div class="card color2">
+        <h3>N.S.S Programme Officers</h3>
+        <ul>
+          <li>Dr. P. Ponraj — Unit 29</li>
+          <li>Dr. A. Gunaseelan — Unit 30</li>
+          <li>Dr. N.R. Senthil Kumar — Unit 31</li>
+          <li>Dr. R.R. Vishnupriya — Unit 32</li>
+        </ul>
+      </div>
+
+      <div class="card color5">
+        <h3>Gandhian Thought</h3>
+        <ul>
+          <li>Dr. K. Kavitha (Co-ordinator)</li>
+        </ul>
+      </div>
+
+      <div class="card color4">
+        <h3>Planning &amp; Development Cell</h3>
+        <ul>
+          <li>Dr. E.B. Gnaneswaran (Convener)</li>
+          <li>Tmt. K. Vasuki (Member)</li>
+          <li>Tmt. K. Subashini (Member)</li>
+          <li>Dr. M. Sumithra (Member)</li>
+        </ul>
+      </div>
+
+      <!-- Row 6 -->
+      <div class="card color4">
+        <h3>Youth Red Cross</h3>
+        <ul>
+          <li>Tmt. K. Subashini (Co-ordinator)</li>
+        </ul>
+      </div>
+
+      <div class="card color1">
+        <h3>World University Service</h3>
+        <ul>
+          <li>Dr. K. Muthamil Selvi (Co-ordinator)</li>
+        </ul>
+      </div>
+
+      <div class="card color2">
+        <h3>Staff Council</h3>
+        <ul>
+          <li>Capt. Dr. K.R. Srinivasan — President</li>
+          <li>Dr. M.G. Ramprasath — Secretary</li>
+          <li>Dr. M. Rajasekaran — Joint Secretary</li>
+        </ul>
+      </div>
+
+      <!-- Row 7 -->
+      <div class="card color5">
+        <h3>Rotaract Club</h3>
+        <ul>
+          <li>Dr. M.P. Ganesan (Staff Co-ordinator)</li>
+        </ul>
+      </div>
+
+      <div class="card color3">
+        <h3>Non-Major Elective Committee</h3>
+        <ul>
+          <li>Dr. T.R. Jeevapriya (Convener)</li>
+          <li>Dr. M. Venkatesan (Member)</li>
+          <li>Thiru. N.V. Vijayanand (Member)</li>
+        </ul>
+      </div>
+
+      <div class="card color1">
+        <h3>Public Relations</h3>
+        <ul>
+          <li>Dr. R.R. Vishnupriya (Convener)</li>
+          <li>Dr. S.S. Suganthy (Member)</li>
+          <li>Dr. M. Sumithra (Member)</li>
+        </ul>
+      </div>
+
+      <!-- Row 8 -->
+      <div class="card color2">
+        <h3>Part V</h3>
+        <ul>
+          <li>Tmt. K.M. Poornima (Convener)</li>
+          <li>Dr. Rohinipandian (Member)</li>
+        </ul>
+      </div>
+
+      <div class="card color4">
+        <h3>Students Grievance Cell</h3>
+        <ul>
+          <li>Dr. M.G. Ramprasath (Convener)</li>
+          <li>Dr. K. Subbulakshmi (Member)</li>
+        </ul>
+      </div>
+
+      <div class="card color3">
+        <h3>Career Guidance &amp; Counselling Cell</h3>
+        <ul>
+          <li>Dr. K. Gnanaguru (Convener)</li>
+          <li>Dr. K. Kavitha (Member)</li>
+        </ul>
+      </div>
+
+      <!-- Row 9 -->
+      <div class="card color1">
+        <h3>Citizen Consumer Club</h3>
+        <ul>
+          <li>Tmt. K.M. Poornima (Co-Ordinator)</li>
+        </ul>
+      </div>
+
+      <div class="card color5">
+        <h3>ECO Club</h3>
+        <ul>
+          <li>Dr. M. Venkatesan (Convener)</li>
+          <li>Dr. N.P. Krishnan (Co-Convener)</li>
+          <li>Dr. G. Kalaivani (Co-Ordinator)</li>
+          <li>Dr. K. Gnanaguru (Co-Ordinator)</li>
+        </ul>
+      </div>
+
+      <div class="card color2">
+        <h3>Band Committee</h3>
+        <ul>
+          <li>Dr. R.R. Vishnupriya (Co-ordinator)</li>
+          <li>Dr. N.R. Senthil Kumar (Member)</li>
+          <li>Dr. S.S. Suganthy (Member)</li>
+        </ul>
+      </div>
+
+      <!-- Row 10 -->
+      <div class="card color3">
+        <h3>Patti-Thatha Club</h3>
+        <ul>
+          <li>Dr. S.S. Suganthy (Co-Ordinator)</li>
+          <li>Dr. G.G. Bhuvaneswari (Member)</li>
+        </ul>
+      </div>
+
+      <div class="card color4">
+        <h3>Anti-Ragging &amp; Social Welfare Committee</h3>
+        <ul>
+          <li>Tmt. K. Vasuki (Convener)</li>
+          <li>Tmt. K.S. Mahalakshmi (Member)</li>
+          <li>Dr. G. ChinnaDurai (Member)</li>
+        </ul>
+      </div>
+
+      <div class="card color1">
+        <h3>Fine Arts Committee</h3>
+        <ul>
+          <li>Dr. S.M. Nandini (Convener)</li>
+          <li>Dr. K. Kavitha (Member)</li>
+          <li>Dr. R.R. Vishnupriya (Member)</li>
+          <li>Dr. S.K. Kanchana (Member)</li>
+        </ul>
+      </div>
+
+      <!-- Row 11 -->
+      <div class="card color5">
+        <h3>Campus Monitoring Flying Squad</h3>
+        <ul>
+          <li>Capt. Dr. K.R. Srinivasan (Principal)</li>
+          <li>Thiru. R.R. Kubendran (Member)</li>
+          <li>Dr. J. Duraichamy (Member)</li>
+          <li>Dr. G. Sivabalan (Member)</li>
+          <li>Dr. C.S. Vijayakumar (Member)</li>
+          <li>N.S.S. Students Volunteers (Member)</li>
+        </ul>
+      </div>
+
+      <div class="card color2">
+        <h3>Virutcham</h3>
+        <ul>
+          <li>Dr. M.G. Ramprasath (Convener)</li>
+          <li>Dr. M. Venkatesan (Member)</li>
+          <li>Dr. K. MuthamilSelvi (Member)</li>
+          <li>Dr. K.R. Kavitha (Member)</li>
+        </ul>
+      </div>
+
+      <div class="card color3">
+        <h3>Electoral Literacy Club</h3>
+        <ul>
+          <li>Dr. Sithu Muralidharan Devi (Convener)</li>
+        </ul>
+      </div>
+
+      <!-- Row 12 -->
+      <div class="card color4">
+        <h3>Library Advisory Committee</h3>
+        <ul>
+          <li>Capt. Dr. K.R. Srinivasan (Principal)</li>
+          <li>Thiru. C.S. Vijayakumar (Convener)</li>
+          <li>Dr. M. Venkatesan (Member)</li>
+          <li>Dr. M. Balaji (Member)</li>
+          <li>Dr. T.P. Ramprasad (Member)</li>
+          <li>Dr. S. Athinarayanan (Member)</li>
+        </ul>
+      </div>
+
+      <div class="card color1">
+        <h3>Nature Club</h3>
+        <ul>
+          <li>Dr. K.R. Lakshmi (Convener)</li>
+          <li>Dr. Rohini Pandian (Member)</li>
+          <li>Dr. M. Venkatesan (Member)</li>
+        </ul>
+      </div>
+
+      <div class="card color5">
+        <h3>UGC Online Course (Swayam / NPTEL)</h3>
+        <ul>
+          <li>Dr. G.G. Bhuvaneswari (Convener)</li>
+          <li>Thiru. C.S. Vijayakumar (Member)</li>
+          <li>Dr. R.R. Vishnupriya (Member)</li>
+          <li>Dr. T.S. Manikandan (Member)</li>
+        </ul>
+      </div>
+
+      <!-- Row 13 -->
+      <div class="card color2">
+        <h3>NIRF Ranking</h3>
+        <ul>
+          <li>Dr. M. Balaji (Convener)</li>
+          <li>Dr. M.P. Ganesan (Member)</li>
+          <li>Dr. P. Ponraj (Member)</li>
+          <li>Dr. K.G. Raja SabarishBabu (Member)</li>
+        </ul>
+      </div>
+
+      <div class="card color4">
+        <h3>Institute Innovation Cell</h3>
+        <ul>
+          <li>Dr. M. Rajasekaran (Convener)</li>
+          <li>Dr. S. Athinarayanan (Member)</li>
+        </ul>
+      </div>
+
+      <div class="card color3">
+        <h3>Counselling Cell</h3>
+        <ul>
+          <li>Tmt. T.N.K. Kavitha (Convener)</li>
+          <li>Tmt. K.M. Poornima (Member)</li>
+          <li>Thiru. T.K. Sivakumar (Member)</li>
+          <li>Dr. K.M. Kavitha (Member)</li>
+          <li>Dr. T.P. Ramprasad (Member)</li>
+        </ul>
+      </div>
+
+      <!-- Row 14 -->
+      <div class="card color1">
+        <h3>Students Induction Programme</h3>
+        <ul>
+          <li>Dr. M. Rajasekaran (Convenor)</li>
+          <li>Dr. G. Kalaivani (Member)</li>
+          <li>Dr. K. Gnanaguru (Member)</li>
+        </ul>
+      </div>
+
+      <div class="card color5">
+        <h3>Intellectual Property Rights Cell</h3>
+        <ul>
+          <li>Dr. T.R. Jeevapriya — Director</li>
+          <li>Dr. S. Lakshmanamoorthy — Member</li>
+          <li>Dr. M. Rajasekaran — Member</li>
+          <li>Dr. P. Ponraj — Member</li>
+        </ul>
+      </div>
+
+      <div class="card color2">
+        <h3>Road Safety Club</h3>
+        <ul>
+          <li>Dr. A. Gunaseelan — Convener</li>
+          <li>Other NSS Programme officers — Member</li>
+        </ul>
+      </div>
+
+      <!-- Row 15 -->
+      <div class="card color4">
+        <h3>Anti-Drug Club</h3>
+        <ul>
+          <li>Dr. G. Kalaivani (Co-ordinator)</li>
+          <li>Dr. A. Gunaseelan</li>
+        </ul>
+      </div>
+
+    </div> <!-- end grid -->
+
+  </main>
+  <div style="
+  background:#222;
+  color:#ccc;
+  text-align:center;
+  padding: 25px 10px;
+  font-size:14px;
+">
+ © 2025 Powered by Sourashtra College<br>
+</div>
+
+
+</body>
+</html>

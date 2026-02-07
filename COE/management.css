@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+.page-title {
+    font-size: 36px;
+    color: #c62828;
+    margin-top: 20px;
+}
+
+.role-title {
+    font-size: 28px;
+    color: #c62828;
+    margin-top: 50px;
+}
+
+.member-card {
+    margin-top: 20px;
+}
+
+.member-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid #ddd;
+}
+
+.member-name {
+    margin-top: 15px;
+    font-size: 20px;
+    color: #0a3cb4;
+    font-weight: bold;
+}
+
+
+
+
+   /*  footer   */
+
+ .sc-footer {
+    background: #333333;
+    color: #ffffff;
+    padding: 25px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.footer-left p {
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+.footer-right a {
+    color: white;
+    font-size: 20px;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+.footer-right a:hover {
+    color: #cccccc;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .two-column {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.column {
+    width: 45%;
+    text-align: center;
+}
+
+#profile {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

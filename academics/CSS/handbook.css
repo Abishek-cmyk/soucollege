@@ -1,0 +1,111 @@
+/* ===============================
+   HANDBOOK – PREMIUM DESIGN
+   Colors: Red | Blue | White
+   Font: Times New Roman
+================================ */
+
+.handbook-box{
+    max-width:520px;
+    margin:70px auto;
+    background:#ffffff;
+    border-radius:10px;
+    overflow:hidden;
+    font-family:"Times New Roman", Times, serif;
+    box-shadow:0 12px 35px rgba(0,0,0,0.12);
+    border-top:6px solid #c62828;
+}
+
+/* TITLE BAR */
+.handbook-title{
+    background:linear-gradient(135deg,#c62828,#003366);
+    color:#ffffff;
+    padding:18px 15px;
+    text-align:center;
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    position:relative;
+}
+
+/* small decorative line */
+.handbook-title::after{
+    content:"";
+    width:70px;
+    height:3px;
+    background:#ffffff;
+    display:block;
+    margin:10px auto 0;
+    border-radius:3px;
+}
+
+/* CONTENT */
+.handbook-list{
+    padding:30px 26px 35px;
+    background:#ffffff;
+}
+
+/* HANDBOOK BUTTON */
+.handbook-list a{
+    display:block;
+    text-align:center;
+    padding:14px 18px;
+    margin-bottom:16px;
+    border-radius:30px;
+    font-size:17px;
+    font-weight:700;
+    text-decoration:none;
+    color:#003366;
+    background:#ffffff;
+    border:2px solid #003366;
+    position:relative;
+    overflow:hidden;
+    transition:all 0.4s ease;
+}
+
+/* arrow icon (pure CSS) */
+.handbook-list a::after{
+    content:"⇩";
+    position:absolute;
+    right:22px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:18px;
+    color:#c62828;
+    transition:0.4s;
+}
+
+/* HOVER EFFECT */
+.handbook-list a:hover{
+    background:linear-gradient(135deg,#003366,#c62828);
+    color:#ffffff;
+    border-color:#c62828;
+    transform:translateY(-4px);
+    box-shadow:0 8px 22px rgba(0,0,0,0.18);
+}
+
+.handbook-list a:hover::after{
+    color:#ffffff;
+    transform:translateY(-50%) translateX(4px);
+}
+
+/* LAST ITEM */
+.handbook-list a:last-child{
+    margin-bottom:0;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+    .handbook-box{
+        margin:40px 18px;
+    }
+
+    .handbook-title{
+        font-size:19px;
+    }
+
+    .handbook-list a{
+        font-size:16px;
+        padding:13px 16px;
+    }
+}

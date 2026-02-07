@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Deans Page</title>
+
+<style>
+    body {
+        font-family: Arial;
+        margin: 0;
+        background: #f4f4f4;
+    }
+
+    h1 {
+        text-align: center;
+        padding: 20px;
+        color: #b73737;
+    }
+
+    .wrapper {
+        width: 90%;
+        max-width: 1000px;
+        margin: auto;
+        background: white;
+        display: flex;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid #ddd;
+    }
+
+    /* Hide radio buttons */
+    input[type="radio"] {
+        display: none;
+    }
+
+    /* LEFT MENU */
+    .left-menu {
+        width: 230px;
+        background: #f7f7f7;
+        border-right: 1px solid #ddd;
+    }
+
+    .left-menu label {
+        display: block;
+        padding: 14px 20px;
+        cursor: pointer;
+        border-bottom: 1px solid #eee;
+        font-weight: bold;
+    }
+
+    .left-menu label:hover {
+        background: #d8e2ff;
+    }
+
+   
+    #tab1:checked ~ .left-menu label[for="tab1"],
+    #tab2:checked ~ .left-menu label[for="tab2"],
+    #tab3:checked ~ .left-menu label[for="tab3"],
+    #tab4:checked ~ .left-menu label[for="tab4"] {
+        background: #2b3f6b;
+        color: white;
+    }
+
+   
+    .content {
+        padding: 30px;
+        width: 100%;
+    }
+
+    .box {
+        display: none;
+    }
+
+    
+    #tab1:checked ~ .content #content1,
+    #tab2:checked ~ .content #content2,
+    #tab3:checked ~ .content #content3,
+    #tab4:checked ~ .content #content4 {
+        display: block;
+    }
+
+    .pdf-btn {
+        display: inline-block;
+        margin-top: 12px;
+        padding: 10px 15px;
+        background: #b73737;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+</style>
+</head>
+
+<body>
+
+<h1>DEANS</h1>
+
+<div class="wrapper">
+
+   
+    <input type="radio" id="tab1" name="tabs" checked>
+    <input type="radio" id="tab2" name="tabs">
+    <input type="radio" id="tab3" name="tabs">
+    <input type="radio" id="tab4" name="tabs">
+
+  
+    <div class="left-menu">
+        <label for="tab1">Academic Affairs</label>
+        <label for="tab2">Research</label>
+        <label for="tab3">Co-Curricular</label>
+        <label for="tab4">Internal Test</label>
+    </div>
+
+   
+    <div class="content">
+
+       
+        <div id="content1" class="box">
+            <h2>Dean: Dr. T.N.K. Kavitha</h2>
+            <p>Assistant Professor, Department of English</p>
+            <a class="pdf-btn" href="Dr.T.N.K.Kavitha.pdf" target="_blank">Open PDF</a>
+        </div>
+
+       
+        <div id="content2" class="box">
+            <h2>Dean: Dr. M. Balaji</h2>
+            <p>Assistant Professor in Department of Physics</p>
+            <a class="pdf-btn" href="msbalaji.pdf" target="_blank">Open PDF</a>
+        </div>
+
+       
+        <div id="content3" class="box">
+            <h2>Dean: Tmt. G. Kalaivani</h2>
+            <p>Assistant Professor, Department of English</p>
+            <a class="pdf-btn" href="kalai.pdf" target="_blank">Open PDF</a>
+        </div>
+
+        
+        <div id="content4" class="box">
+            <h2>Dean: Dr. K.G. Nalina</h2>
+            <p>Department of Corporate Secretaryship</p>
+        </div>
+
+    </div>
+
+</div>
+<div style="
+background:#222;
+color:#ccc;
+text-align:center;
+padding: 25px 10px;
+font-size:14px;
+">
+© 2025 Powered by Sourashtra College <br>
+
+</div>
+
+
+</body>
+</html>

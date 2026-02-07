@@ -1,0 +1,256 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+body {
+    font-family: "Times New Roman", Times, serif;
+    background: #f4f6fa;
+    margin: 0;
+    padding: 30px 15px;
+    line-height: 1.7;
+    color: #222;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+.main-heading {
+    text-align: center;
+    color: #c40000;
+    font-size: 34px;
+    margin-bottom: 35px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.sub-heading {
+    color: #003366;
+    font-size: 22px;
+    margin: 35px 0 18px;
+    padding-left: 14px;
+    border-left: 5px solid #c40000;
+    font-weight: bold;
+}
+
+/* =========================
+   FORM CONTAINER
+========================= */
+.form-box {
+    width: 58%;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px 35px;
+    border-radius: 8px;
+    border-top: 6px solid #003366;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.form-box h2 {
+    text-align: center;
+    color: #003366;
+    margin-bottom: 25px;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   FORM ELEMENTS
+========================= */
+label {
+    color: #b00000;
+    font-weight: bold;
+    margin-bottom: 6px;
+    display: block;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #b5c6dc;
+    border-radius: 4px;
+    font-size: 15px;
+    background: #fafcff;
+    transition: all 0.25s ease-in-out;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #c40000;
+    background: #ffffff;
+    box-shadow: 0 0 6px rgba(196, 0, 0, 0.3);
+    outline: none;
+}
+
+/* =========================
+   BUTTON
+========================= */
+button {
+    background: linear-gradient(135deg, #c40000, #003366);
+    color: #ffffff;
+    padding: 12px 28px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #003366, #c40000);
+    transform: translateY(-1px);
+}
+
+/* =========================
+   ADMIN TABLE – ALIGNMENT FIX
+========================= */
+.po-table {
+    width: 95%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    table-layout: fixed;  /* MOST IMPORTANT */
+    background: #fff;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.po-table th {
+    background: #003366;
+    color: #fff;
+    padding: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 15px;
+    border-bottom: 2px solid #c40000;
+}
+
+.po-table td {
+    padding: 14px;
+    vertical-align: middle;
+    border-bottom: 1px solid #dbe4f0;
+    font-size: 15px;
+    word-break: break-word;
+}
+
+/* COLUMN WIDTHS */
+.po-table th:nth-child(1),
+.po-table td:nth-child(1) { width: 20%; text-align: center; }
+
+.po-table th:nth-child(2),
+.po-table td:nth-child(2) { width: 25%; text-align: center; font-weight: 600; }
+
+.po-table th:nth-child(3),
+.po-table td:nth-child(3) { width: 40%; text-align: left; }
+
+.po-table th:nth-child(4),
+.po-table td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* ZEBRA */
+.po-table tbody tr:nth-child(even) {
+    background: #f6f8fc;
+}
+
+/* ACTION */
+.action-col a {
+    display: inline-block;
+    margin: 3px;
+}
+
+/* =========================
+   LOGOUT BUTTON
+========================= */
+.logout-box {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+}
+
+.logout-btn {
+    background: #c40000;
+    color: #ffffff;
+    padding: 8px 18px;
+    font-size: 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 2px solid #003366;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: #003366;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .form-box {
+        width: 95%;
+        padding: 25px;
+    }
+
+    .main-heading {
+        font-size: 26px;
+    }
+}
+
+/* =========================
+   PRINT VIEW
+========================= */
+@media print {
+    body {
+        background: #ffffff;
+        padding: 0;
+    }
+
+    .form-box,
+    .po-table {
+        box-shadow: none;
+    }
+
+    .logout-box {
+        display: none;
+    }
+}
+
+/* ACTION BUTTONS */
+.edit-btn {
+    background: #003366;
+    color: #fff;
+    padding: 6px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.edit-btn:hover {
+    background: #002244;
+}
+
+.delete-btn {
+    background: #c40000;
+    color: #fff;
+    padding: 6px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.delete-btn:hover {
+    background: #900000;
+}

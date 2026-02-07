@@ -1,0 +1,144 @@
+/* =====================================================
+   RESET + GLOBAL
+===================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", serif;
+}
+
+body {
+  background: linear-gradient(135deg, #004aad 0%, #ff002b 100%);
+  color: #222;
+  padding: 40px 0;
+  animation: fadeIn 1s ease-in;
+}
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+.container {
+  max-width: 960px;
+  margin: auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.8s ease-in-out;
+}
+
+/* =====================================================
+   PAGE HEADING
+===================================================== */
+.page-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #004aad;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid #ff002b;
+  text-shadow:
+    1px 1px 0 #ffffff,
+    -1px -1px 2px #b5b5b5,
+    2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* =====================================================
+   DEPARTMENT LIST
+===================================================== */
+.dept-list {
+  list-style: none;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+/* Department Links */
+.dept-list li a {
+  text-decoration: none;
+  background: #e6f1ff;
+  color: #002f6c;
+  padding: 14px 18px;
+  display: block;
+  border-radius: 10px;
+  font-size: 18px;
+  border: 2px solid transparent;
+  transition: all 0.35s ease;
+}
+
+/* Hover Effect */
+.dept-list li a:hover {
+  background: #ff002b;
+  color: #ffffff;
+  font-weight: bold;
+  transform: translateY(-6px);
+  border-color: #001f4d;
+  box-shadow: 0 10px 20px rgba(255, 0, 70, 0.4);
+}
+
+/* =====================================================
+   SECTION HEADING (Professional Programmes)
+===================================================== */
+/* =====================================================
+   PROFESSIONAL PROGRAMMES HEADING (Same as H1)
+===================================================== */
+.dept-heading {
+  grid-column: 1 / -1;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: #004aad;
+  margin: 35px 0 25px;
+  letter-spacing: 1px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid #ff002b;
+  list-style: none;
+
+  /* EMBOSS EFFECT */
+  text-shadow :
+    1px 1px 0 #ffffff,
+    -1px -1px 2px #b5b5b5,
+    2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+.site-footer {
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 25px;
+  font-size: 16px;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+/* =====================================================
+   RESPONSIVE (Mobile)
+===================================================== */
+@media (max-width: 768px) {
+  .dept-list {
+    grid-template-columns: 1fr;
+  }
+
+  .page-title {
+    font-size: 28px;
+  }
+}
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

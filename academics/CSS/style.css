@@ -1,0 +1,183 @@
+/* ----------------------------- */
+/* MAIN MENU BASE */
+/* ----------------------------- */
+
+* { box-sizing: border-box; }
+
+.main-menu {
+    list-style: none;
+    padding: 0;
+    margin: 20px;
+    background: #003aa8;
+    border-radius: 8px;
+    display: inline-block;
+    min-width: 240px;
+}
+
+.main-menu > li {
+    position: relative;
+    float: left;
+}
+
+/* Make top-level anchor a flex row so arrow sits right of text */
+.main-menu > li > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 24px;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    gap: 10px; /* small space between text and arrow */
+}
+
+.main-menu > li:hover {
+    background: #002a80;
+}
+
+/* ----------------------------- */
+/* LEVEL 1 SUBMENU */
+/* ----------------------------- */
+
+.sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #003a9c;
+    list-style: none;
+    padding: 6px 0;
+    min-width: 240px;
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+
+    /* hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px) scale(0.98);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.sub-menu li { position: relative; }
+
+/* Make submenu anchors also flex so arrows align */
+.sub-menu li > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.sub-menu li:hover > a { background: #cc0000; }
+
+/* ----------------------------- */
+/* LEVEL 2 INNER SUBMENU */
+/* ----------------------------- */
+
+/* ----------------------------- */
+/* LEVEL 2 INNER SUBMENU */
+/* ----------------------------- */
+
+/* ⭐ ADD THIS — MOST IMPORTANT */
+.sub-menu .has-sub {
+    position: relative;
+}
+
+.inner-sub {
+    position: absolute;
+    top: -100%;   /* This moves inner submenu UP to the main menu level */
+    left: 100%;
+    background: #003a9c;
+    list-style: none;
+    padding: 6px 0;
+    min-width: 220px;
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.inner-sub li > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* ----------------------------- */
+/* ARROW STYLES */
+/* ----------------------------- */
+
+.arrow {
+    margin-left: 8px; /* gap between name and arrow */
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+}
+
+.arrow::after {
+    content: "►";
+    display: inline-block;
+    transform-origin: center;
+    transition: transform 0.18s ease;
+}
+
+/* rotate arrow when open */
+.has-sub.open > a .arrow::after {
+    transform: rotate(90deg);
+}
+
+/* ----------------------------- */
+/* CLICK-OPEN STATE (controlled by .open class) */
+/* ----------------------------- */
+
+.menu-item.open > .sub-menu,
+.has-sub.open > .inner-sub {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) scale(1) !important;
+    display: block !important;
+}
+
+/* when inner-sub is opened remove the translateX transform */
+.has-sub.open > .inner-sub {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateX(0) !important;
+}
+
+/* ----------------------------- */
+/* RESPONSIVE */
+/* ----------------------------- */
+
+@media (max-width: 768px) {
+    .main-menu { width: 100%; display: block; }
+    .main-menu > li { float: none; width: 100%; }
+    .main-menu > li > a { padding: 14px 18px; font-size: 16px; }
+
+    .sub-menu, .inner-sub {
+        position: relative;
+        width: 100%;
+        left: 0;
+        border-radius: 0;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        box-shadow: none;
+    }
+
+    .inner-sub { padding-left: 12px; }
+}

@@ -1,0 +1,40 @@
+<?php include 'db.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Handbook – Aided</title>
+
+    <link rel="stylesheet" href="css/handbook.css">
+</head>
+<body>
+
+<div class="handbook-box">
+    <div class="handbook-title">HANDBOOK - AIDED</div>
+
+    <div class="handbook-list">
+        <?php
+        $res = mysqli_query($conn,
+            "SELECT * FROM handbooks 
+             WHERE type='aided' 
+             ORDER BY year ASC"
+        );
+
+        if(mysqli_num_rows($res) > 0){
+            while($row = mysqli_fetch_assoc($res)){
+        ?>
+            <a href="../uploads/handbook/aided/<?= htmlspecialchars($row['pdf_file']); ?>"
+               target="_blank">
+               College Handbook <?= htmlspecialchars($row['year']); ?>
+            </a>
+        <?php 
+            }
+        } else {
+            echo "<p style='text-align:center;color:#555;'>No handbooks uploaded</p>";
+        }
+        ?>
+    </div>
+</div>
+
+</body>
+</html>

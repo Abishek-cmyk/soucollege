@@ -1,0 +1,128 @@
+/* ===== Body ===== */
+body {
+    font-family: "Times New Roman", Times, serif;
+    background-color: #f2f4f8;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #003366;
+}
+
+/* ===== Headings ===== */
+h2 {
+    color: #cc0000;
+    margin-top: 30px;
+}
+
+/* ===== Upload Form ===== */
+form {
+    width: 420px;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border: 2px solid #003366;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ===== File Input ===== */
+input[type="file"] {
+    width: 100%;
+    padding: 6px;
+    font-family: "Times New Roman", Times, serif;
+    border: 1px solid #003366;
+}
+
+/* ===== Buttons ===== */
+button {
+    margin-top: 10px;
+    padding: 8px 14px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+    background-color: #003366;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #cc0000;
+}
+
+/* ===== Table ===== */
+table {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+table th {
+    background-color: #003366;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+}
+
+table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #cccccc;
+}
+
+/* ===== Action Links ===== */
+a {
+    color: #003366;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #cc0000;
+}
+
+/* ===== Edit Form inside Table ===== */
+table form {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+    background: none;
+}
+
+table input[type="file"] {
+    width: 160px;
+    margin-bottom: 5px;
+}
+
+/* ===== Horizontal Line ===== */
+hr {
+    width: 80%;
+    margin: 30px auto;
+    border: 1px solid #003366;
+}
+
+/* ===== Logout Button ===== */
+.logout-box {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+.logout-btn {
+    padding: 8px 16px;
+    background-color: #cc0000; /* red */
+    color: #ffffff;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 2px solid #003366; /* blue */
+}
+
+.logout-btn:hover {
+    background-color: #003366; /* blue */
+    color: #ffffff;
+}

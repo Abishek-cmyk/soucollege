@@ -1,0 +1,270 @@
+/* ------------------------------------------------------- */
+/* GLOBAL SETTINGS */
+/* ------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", serif !important;
+}
+
+body {
+  background: #ffffff;
+  color: #111;
+  padding: 20px;
+  line-height: 1.6;
+  animation: fadeBody 0.8s ease;
+}
+
+@keyframes fadeBody {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------------------------------------------- */
+/* WRAPPER */
+.wrap {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 10px;
+}
+
+/* ------------------------------------------------------- */
+/* HEADER */
+/* ------------------------------------------------------- */
+.site-header .title {
+  color: #004aad;
+  font-size: 42px;
+  text-align: center;
+  letter-spacing: 1px;
+  animation: slideDown 1s ease;
+}
+
+.site-header .subtitle {
+  color: #d60000;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 5px;
+  opacity: 0.9;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ------------------------------------------------------- */
+/* PAGE LAYOUT — ROW WISE */
+/* ------------------------------------------------------- */
+.main-grid {
+  display: flex;
+  flex-direction: column;   /* ROW WISE */
+  gap: 25px;
+  padding-top: 20px;
+}
+
+/* ------------------------------------------------------- */
+/* CARD DESIGN */
+/* ------------------------------------------------------- */
+.card {
+  background: #ffffff;
+  border-left: 6px solid #004aad;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.card h2,
+.card h3 {
+  color: #004aad;
+  margin-bottom: 18px;
+}
+
+/* ------------------------------------------------------- */
+/* RIBBON */
+/* ------------------------------------------------------- */
+.ribbon {
+  background: linear-gradient(120deg, #004aad, #d60000);
+  padding: 8px 14px;
+  color: white;
+  display: inline-block;
+  margin-top: 15px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* ------------------------------------------------------- */
+/* OVERVIEW SIDE BUTTONS */
+/* ------------------------------------------------------- */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tab-btn {
+  padding: 12px;
+  border-radius: 8px;
+  background: #004aad;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.tab-btn:hover {
+  background-color: #d60000;
+  transform: scale(1.05);
+}
+
+.tab-btn.active {
+  background: linear-gradient(120deg, #004aad, #d60000);
+  transform: scale(1.04);
+  color: white;
+}
+
+/* ------------------------------------------------------- */
+/* TAB CONTENT */
+/* ------------------------------------------------------- */
+.tab-content {
+  margin-top: 20px;
+}
+
+.tab-panel {
+  display: none;
+  animation: fadeUp 0.6s ease;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+.tab-panel h3 {
+  color: #004aad;
+  margin-bottom: 14px;
+}
+
+/* ------------------------------------------------------- */
+/* COURSE CONTENT IMAGE */
+/* ------------------------------------------------------- */
+.course-image-wrap {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.course-image-wrap img {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.20);
+  text-align: center;
+}
+
+table td, table th {
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+/* ------------------------------------------------------- */
+/* FACULTY TABLE */
+/* ------------------------------------------------------- */
+.faculty-wrap {
+  overflow-x: auto;
+}
+
+.faculty-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.faculty-table th {
+  background: #004aad;
+  color: white;
+  padding: 14px;
+  font-size: 18px;
+}
+
+.faculty-table td {
+  padding: 12px;
+  font-size: 16px;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+.faculty-table tr:hover {
+  background: rgba(0,74,173,0.1);
+  transition: 0.3s ease;
+}
+
+/* ------------------------------------------------------- */
+/* ADMIN LINK BUTTON */
+/* ------------------------------------------------------- */
+.admin-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 14px 20px;
+  background: linear-gradient(120deg, #004aad, #d60000);
+  color: white !important;
+  border-radius: 10px;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0px 5px 18px rgba(0,0,0,0.4);
+}
+
+/* ------------------------------------------------------- */
+/* FOOTER */
+/* ------------------------------------------------------- */
+.site-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+  padding: 10px 0;
+}
+
+.site-footer p {
+  color: #004aad;
+  font-size: 18px;
+  opacity: 0.9;
+  text-align: center;
+}
+
+/* ------------------------------------------------------- */
+/* RESPONSIVE */
+/* ------------------------------------------------------- */
+@media (max-width: 768px) {
+  .sidebar {
+    flex-direction: column;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .faculty-table td,
+  .faculty-table th {
+    font-size: 15px;
+  }
+}
+

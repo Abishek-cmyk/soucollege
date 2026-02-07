@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feedback Form</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="fade-in">
+
+        <!-- ===== COLLEGE HEADER ===== -->
+<header class="college-header">
+
+    <!-- LEFT + CENTER -->
+    <div class="college-center">
+
+        <div class="college-left">
+            <img src="../images/logo.jpg" alt="College Logo">
+        </div>
+
+        <div class="college-text">
+            <h1>SOURASHTRA COLLEGE (AUTONOMOUS)</h1>
+            <h3>(A Linguistic Minority Co-Educational Institution)</h3>
+            <p>
+                Affiliated to Madurai Kamaraj University<br>
+                Re-accredited with ‘A’ Grade by NAAC, Madurai – 625004
+            </p>
+        </div>
+
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="college-right">
+
+        <!-- CONTACT INFO -->
+<!-- CONTACT INFO -->
+<div class="contact-info">
+    <span>
+        <i class="bi bi-envelope-fill"></i>
+        soucontact@sourashtracollege.ac.in
+    </span>
+
+    <span>
+        <i class="bi bi-telephone-fill"></i>
+        8754209994 / 8754208885
+    </span>
+</div>
+
+
+        <!-- ADMIN BUTTON -->
+        <a href="../academics/login.php" class="admin-link">Admin Login</a>
+
+        <!-- SOCIAL ICONS -->
+        <div class="social-icons">
+            <a href="https://wa.me/918754209994" target="_blank"><i class="bi bi-whatsapp"></i></a>
+            <a href="https://www.instagram.com/YOURPAGE" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/YOURPAGE" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.linkedin.com/company/YOURPAGE" target="_blank"><i class="bi bi-linkedin"></i></a>
+        </div>
+
+    </div>
+
+</header>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="navbar">
+    <ul>
+        <li><a href="../index.php">HOME</a></li>
+
+        <li><a href="#">ADMIN</a>
+            <div class="dropdown">
+                <a href="../scw/about.html">About Us</a>
+                <a href="../coe/management.html">Management</a>
+                <a href="../scw/organisation.html">Organisational Structure</a>
+                <a href="../scw/principal.html">Principal's Message</a>
+                <a href="../scw/deans.html">Dean</a>
+                <a href="../scw/corevalue.html">Core Values</a>
+                <a href="../coe/exam.html">Controller of Examinations</a>
+                <a href="../scw/committees.html">Committee</a>
+                <div class="dropdown-item">
+                    <a href="#">Policies</a>
+                    <div class="submenu">
+                        <a href="../coe/rules.html">Rules and Regulations</a>
+                        <a href="../scw/llp.html">Laboratory &amp; Library Policies</a>
+                        <a href="#">UGC Compliance</a>
+                    </div>
+                </div>
+                <div class="dropdown-item">
+                    <a href="../scw/code of condcut.html">Code of Conduct</a>
+                    <div class="submenu">
+                        <a href="../coe/ICC.pdf" target="_blank">ICC</a>
+                    </div>
+                </div>
+                <a href="../coe/IDP.pdf" target="_blank">IDP</a>
+            </div>
+        </li>
+
+        <li> <a href ="#">ACADEMICS</a>
+            <div class="dropdown">
+                <a href="../Academics/HTML/programmes.html">Programmes Offered</a>
+                <a href="../Academics/admission.php">Admission Procedure</a>
+                <div class="dropdown-item">
+                    <a href="#">Fee Structure</a>
+                    <div class="submenu">
+                        <a href="../Academics/fee-structure-aided.php">Aided</a>
+                        <a href="../Academics/fee-structure-self.php">Self Finance</a>
+                    </div>
+                </div>
+                <div class="dropdown-item">
+                    <a href="#">Departments</a>
+                    <div class="submenu">
+                        <a href="../Academics/HTML/dept-aided.html">Aided</a>
+                        <a href="../Academics/HTML/dept-self.html">Self Finance</a>
+                    </div>
+                </div>
+
+
+                <div class="dropdown-item">
+                    <a href="#">Programmes</a>
+                    <div class="submenu">
+                        <a href="../Academics/program-outcomes.php">Program Outcomes</a>
+                        <ul class="inner-sub">
+                <li><a href="../Academics/po-2019.php">2019–2020</a></li>
+                <li><a href="../Academics/po-2020.php">2020–2021</a></li>
+                <li><a href="../Academics/po-2021.php">2021–2022</a></li>
+                <li><a href="../Academics/po-2022.php">2022–2023</a></li>
+            </ul>
+                        <a href="../Academics/value-based.php">Value Based-Professional Ethics</a>
+                    </div>
+                </div>
+
+
+<div class="dropdown-item">
+    <a href="#">Syllabus</a>
+
+    <div class="submenu">
+        <?php
+
+        /* ================= YEARS ================= */
+        $years = mysqli_query($conn,"
+            SELECT * FROM syllabus_year
+            ORDER BY is_default DESC, year_name DESC
+        ");
+
+        while ($y = mysqli_fetch_assoc($years)) {
+        ?>
+        <!-- YEAR -->
+        <div class="dropdown-item">
+            <a href="#"><?php echo $y['year_name']; ?></a>
+
+            <div class="submenu">
+
+                <?php
+                /* ================= CHECK VOLUMES ================= */
+                $volumes = mysqli_query($conn,"
+                    SELECT * FROM syllabus_volume
+                    WHERE year_id='{$y['id']}'
+                ");
+
+                /* ---------- IF VOLUME EXISTS ---------- */
+                if (mysqli_num_rows($volumes) > 0) {
+
+                    while ($v = mysqli_fetch_assoc($volumes)) {
+                    ?>
+                        <!-- VOLUME -->
+                        <div class="dropdown-item">
+                            <a href="#"><?php echo $v['volume_name']; ?></a>
+
+                            <div class="submenu">
+                                <?php
+                                $subjects = mysqli_query($conn,"
+                                    SELECT * FROM syllabus_subject
+                                    WHERE volume_id='{$v['id']}'
+                                ");
+
+                                while ($s = mysqli_fetch_assoc($subjects)) {
+                                ?>
+                                    <a href="../uploads/syllabus/<?php echo $s['pdf_file']; ?>" target="_blank">
+                                        <?php echo $s['subject_name']; ?>
+                                    </a>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    <?php
+                    }
+
+                }
+                ?>
+
+                <?php
+                /* ---------- WITHOUT VOLUME (DIRECT SUBJECT) ---------- */
+                $yearSubjects = mysqli_query($conn,"
+                    SELECT * FROM syllabus_subject
+                    WHERE year_id='{$y['id']}' AND volume_id IS NULL
+                ");
+
+                while ($s = mysqli_fetch_assoc($yearSubjects)) {
+                ?>
+                    <a href="../uploads/syllabus/<?php echo $s['pdf_file']; ?>" target="_blank">
+                        <?php echo $s['subject_name']; ?>
+                    </a>
+                <?php } ?>
+
+            </div>
+        </div>
+        <?php } ?>
+    </div>
+</div>
+
+
+
+                
+                <div class="dropdown-item">
+                    <a href="#">HandBook</a>
+                    <div class="submenu">
+                        <a href="../Academics/handbook-aided.php">Aided</a>
+                        <a href="../Academics/handbook-self.php">Self</a>
+                    </div>
+                </div>
+                <div class="dropdown-item">
+                    <a href="../Academics/HTML/anti-ragging.html">Anti-RaggingCell</a>
+                </div>
+                <div class="dropdown-item">
+                    <a href="#">List of Medals</a>
+                    <div class="submenu">
+                        <a href="../Academics/medals_aided.php">Aided</a>
+                        <a href="../Academics/medals_self.php">Self</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+       <li> <a href ="#">STUDENTS</a>
+            <div class="dropdown">
+                <a href="../college/web/scholarship.html">Scholarships & Endowment</a>
+                <a href="../college/web/pta.html">Parent-Teacher Association</a>
+                <a href="#">Certificate - Procedures</a>
+                <a href="../college/web/grievance.html">Students Grievance Form</a>
+                <a href="../college/web/Cguidence.html">Career Guidance Cell</a>
+                <a href="#">Newsletter</a>
+                <a href="#">Students Services</a>
+                <div class="dropdown-item">
+                    <a href="../college/web/feedbackform.html">Feedback</a>
+                    <div class="submenu">
+                        <a href="#">Feedback Form</a>
+                        <a href="#">Parent Feedback Form</a>
+                        <a href="#">Feedback Analysis Result 2017-2018</a>
+                        <a href="#">Feedback Analysis Result 2018-2019</a>
+                        <a href="#">Feedback Analysis Result 2019-2020</a>
+                        <a href="#">Feedback Analysis Result 2021-2022</a>
+                        <a href="#">Feedback Analysis Result 2022-2023</a>
+                        <a href="#">Feedback Analysis Result 2023-2024</a>
+                    </div>
+                </div>
+                <a href="#">Parents Feedback</a>
+            </div>
+        </li>
+
+        <li> <a href ="#"> LIBRARY</a>
+            <div class="dropdown">
+               <div class="dropdown-item">
+                    <a href="#">Library Details</a>
+                    <div class="submenu">
+                        <a href="#">Printed Book Table</a>
+                    </div>
+                </div>
+                <a href="#">N-List</a>
+                <a href="#">E-Library</a>
+                <a href="#">OPAC</a>
+                <a href="#">E-Resources</a>
+            </div>
+        </li>
+
+        <li> <a href ="#"> FACILITIES</a>
+            <div class="dropdown">
+                <a href="#">Hostels</a>
+                <a href="#">Infrastructure</a>
+                <a href="#">Gallery</a>
+                <a href="#">LMS</a>
+                <a href="#">Capability and Schemes Enchancement Department</a>
+            </div>
+        </li>
+
+        <li> <a href ="#">PLACEMENT</a>
+            <div class="dropdown">
+                <a href="../CW/placement/2po/po.html">Placement Officers</a>
+                <a href="../CW/placement/3po/pr.html">Placement</a>
+                <div class="dropdown-item">
+                    <a href="../CW/placement/4po/pg.html">Gallery</a>
+        </li>
+
+        <li> <a href ="../CW/alumini/soon.html">ALUMNI</a>
+            <div class="dropdown">
+                <a href="../CW/alumini/soon.html"">Alumni (SCAAN)</a>
+                <a href="../CW/alumini/soon.html"">Activities</a>
+                <a href="../CW/alumini/soon.html"">Registration</a>
+                <a href="../CW/alumini/soon.html"">Feedback</a>
+                <a href="../CW/alumini/soon.html"">Feedback 2.7</a>
+            </div>
+        </li>
+
+        <li> <a href ="#">PROFESSIONAL COURSES</a>
+            <div class="dropdown">
+                <a href="#">MBA</a>
+                <a href="#">MCA</a>
+                <a href="#">AICTE</a>
+            </div>
+        </li>
+
+        <li> <a href ="#">RESEARCH</a>
+            <div class="dropdown">
+                <div class="dropdown-item">
+                    <a href="#">RDC</a>
+                    <div class="submenu">
+                        <a href="#">Rules and Regulations</a>
+                        <a href="#">Laboratory &amp; Library Policies</a>
+                        <a href="#">UGC Compliance</a>
+                    </div>
+                </div>
+                <a href="#">IPR</a>
+                <div class="dropdown-item">
+                    <a href="#">Ph.D</a>
+                    <div class="submenu">
+                        <a href="#">ICC</a>
+                    </div>
+                </div>
+                <a href="#">M.Phil</a>
+                <a href="#">Research Promotion Policy</a>
+            </div>
+        </li>
+
+        <li> <a href ="#">NAAC</a>
+            <div class="dropdown">
+                <a href="#">SSR -4 th Cycle</a>
+                <a href="#">NAAC- 4th CYCLE SUPPORTING DOCUMENTS</a>
+            </div>
+        </li>
+
+        <li> <a href ="#">IQAC+</a>
+            <div class="dropdown">
+                <a href="#">Composition</a>
+                <a href="#">AQAR 23-24</a>
+                <a href="#">Procedures And Policies</a>
+                <a href="#">Vision And Mission</a>
+                <a href="#">Functions</a>
+                <div class="dropdown-item">
+                    <a href="#">NIRF</a>
+                    <div class="submenu">
+                        <a href="#">Rules and Regulations</a>
+                        <a href="#">Laboratory &amp; Library Policies</a>
+                        <a href="#">UGC Compliance</a>
+                    </div>
+                </div>
+                <div class="dropdown-item">
+                    <a href="#">AISHE</a>
+                    <div class="submenu">
+                        <a href="#">ICC</a>
+                    </div>
+                </div>
+                <a href="#">Reports</a>
+                <div class="dropdown-item">
+                    <a href="#">Minutes</a>
+                    <div class="submenu">
+                        <a href="#">ICC</a>
+                    </div>
+                </div>
+                <a href="#">Photos</a>
+                <div class="dropdown-item">
+                    <a href="#">Best Practices</a>
+                    <div class="submenu">
+                        <a href="#">ICC</a>
+                    </div>
+                </div>
+                <div class="dropdown-item">
+                    <a href="#">Distinctiveness</a>
+                    <div class="submenu">
+                        <a href="#">ICC</a>
+                    </div>
+                </div>
+                <a href="#">Journals</a>
+                <div class="dropdown-item">
+                    <a href="#">Code of Conduct</a>
+                    <div class="submenu">
+                        <a href="#">ICC</a>
+                    </div>
+                </div>
+                <div class="dropdown-item">
+                    <a href="#">Supporting Document</a>
+                    <div class="submenu">
+                        <a href="#">ICC</a>
+                    </div>
+                </div>
+                <div class="dropdown-item">
+                    <a href="#">Magazine</a>
+                    <div class="submenu">
+                        <a href="#">ICC</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <li><a href="#">RESULT</a></li>
+        <li><a href="#">RTI</a></li>
+        <li><a href="#">CONTACT US</a></li>
+    </ul>
+</nav>
+
+
+<div class="page-container">
+
+    <h1 class="page-title">FEEDBACK FORM</h1>
+
+    <p class="page-description">
+        Your feedback helps us improve our services and provide a better experience for students.
+        Please fill out the form below honestly and completely.
+    </p>
+
+    <div class="form-box">
+        <form>
+
+            <label>Full Name *</label>
+            <input type="text" required placeholder="Enter your full name">
+
+            <label>Roll Number *</label>
+            <input type="text" required placeholder="Enter your roll number">
+
+            <label>Email *</label>
+            <input type="email" required placeholder="Enter your email">
+
+            <label>Department *</label>
+            <input type="text" required placeholder="Enter your department">
+
+            <label>Rate Your Experience *</label>
+            <select required>
+                <option value="">-- Select Rating --</option>
+                <option>Excellent</option>
+                <option>Good</option>
+                <option>Average</option>
+                <option>Poor</option>
+            </select>
+
+            <label>Your Feedback *</label>
+            <textarea required placeholder="Write your feedback here..."></textarea>
+
+            <div class="btn-wrapper">
+                <button type="submit">Submit Feedback</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+<footer class="footer-pta">
+    © All copyrights reserved by Sourashtra College
+</footer>
+
+</body>
+</html>

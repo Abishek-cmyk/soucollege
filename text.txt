@@ -1,0 +1,21 @@
+$users = [
+    "english" => ["password"=>"eng@123", "page"=>"admin.php"],
+    "tamil" => ["password"=>"tam@123", "page"=>"dept-tamil-admin.php"],
+    "hindi" => ["password"=>"hin@123", "page"=>"hindi.php"],
+    "sanskrit" => ["password"=>"san@123", "page"=>"sanskrit.php"],
+    "commerce" => ["password"=>"com@123", "page"=>"commerce.php"],
+    "bba" => ["password"=>"bba@123", "page"=>"bba.php"],
+    "economics" => ["password"=>"eco@123", "page"=>"economics.php"],
+    "maths" => ["password"=>"mat@123", "page"=>"maths.php"],
+    "physics" => ["password"=>"phy@123", "page"=>"physics.php"],
+    "chemistry" => ["password"=>"che@123", "page"=>"chemistry.php"],
+    "botany" => ["password"=>"bot@123", "page"=>"botany.php"],
+    "cs" => ["password"=>"cs@123", "page"=>"cs.php"],
+    "library" => ["password"=>"lib@123", "page"=>"library.php"],
+    "physical" => ["password"=>"phyedu@123", "page"=>"physical.php"],
+    "admission" => ["password"=>"admin@123", "page"=>"admin_upload.php"],
+    "fees" => ["password"=>"fee@123", "page"=>"admin-fee-structure.php"],
+    "value" => ["password"=>"vb@123", "page"=>"admin-value-based.php"],
+    "outcome" => ["password"=>"out@123", "page"=>"admin-program-outcome-pdf.php"],
+    "home"=> ["password"=>"home@123", "page"=>"../admin/dashboard.php"]
+];

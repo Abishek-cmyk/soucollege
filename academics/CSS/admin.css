@@ -1,0 +1,283 @@
+/* ------------------------------------------------------- */
+/* GLOBAL SETTINGS */
+/* ------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Times New Roman", serif !important;
+}
+
+body {
+    background: #ffffff;   /* WHITE BACKGROUND */
+    padding: 20px;
+    color: #111;
+    animation: fadeBody 0.8s ease;
+}
+
+@keyframes fadeBody {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------------------------------------------- */
+/* HEADER */
+/* ------------------------------------------------------- */
+.site-header .title {
+    color: #004aad;   /* BLUE TITLE */
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 1px;
+    animation: slideDown 1s ease;
+}
+
+.site-header .subtitle {
+    color: #d60000;   /* RED SUBTITLE */
+    text-align: center;
+    font-size: 18px;
+    margin-top: 5px;
+    opacity: 0.9;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* ------------------------------------------------------- */
+/* CARD DESIGN — WHITE + BLUE BORDER */
+/* ------------------------------------------------------- */
+.card {
+    background: #ffffff;
+    border-left: 6px solid #004aad;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.card h2, .card h3 {
+    color: #004aad;
+    margin-bottom: 15px;
+}
+
+/* ------------------------------------------------------- */
+/* FORM GRID */
+/* ------------------------------------------------------- */
+.admin-form-grid, .faculty-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 18px;
+    color: #004aad;
+    margin-bottom: 7px;
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 13px;
+    border: 2px solid #004aad;
+    border-radius: 10px;
+    background: #ffffff;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.form-group input:hover,
+.form-group select:hover {
+    transform: scale(1.02);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #d60000;
+    box-shadow: 0px 0px 10px rgba(214,0,0,0.4);
+}
+
+/* ------------------------------------------------------- */
+/* BUTTON */
+/* ------------------------------------------------------- */
+#addCourseForm button,
+#addFacultyForm button,
+.btn {
+    width: 150px; /* smaller fixed width */
+    padding: 10px 16px; /* smaller padding */
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(120deg, #004aad, #d60000);
+    color: white;
+    font-size: 16px; /* slightly smaller font */
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+    display: inline-block;
+}
+
+/* Center buttons in their parent */
+.form-button-container {
+    text-align: center;
+    margin-top: 10px; /* optional spacing */
+}
+
+
+#addCourseForm button:hover,
+#addFacultyForm button:hover,
+.btn:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0px 5px 18px rgba(0,0,0,0.4);
+}
+
+/* ------------------------------------------------------- */
+/* TABLE CONTAINER */
+/* ------------------------------------------------------- */
+.admin-table-container {
+    margin-top: 25px;
+    background: #ffffff;
+    padding: 18px;
+    border-radius: 12px;
+    border-left: 6px solid #004aad;
+    box-shadow: 0px 5px 18px rgba(0,0,0,0.2);
+    animation: fadeUp 1s ease;
+}
+
+/* ------------------------------------------------------- */
+/* TABLE DESIGN */
+/* ------------------------------------------------------- */
+.course-table,
+.faculty-table-admin {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.course-table th,
+.faculty-table-admin th {
+    background: #004aad;
+    color: white;
+    padding: 14px;
+    font-size: 18px;
+}
+
+.course-table td,
+.faculty-table-admin td {
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+    text-align: center;   /* FIXED CENTER */
+}
+
+/* Row hover */
+.course-table tr:hover,
+.faculty-table-admin tr:hover {
+    background: rgba(0,74,173,0.1);
+    transition: 0.3s ease;
+}
+
+/* ------------------------------------------------------- */
+/* ACTION BUTTONS */
+/* ------------------------------------------------------- */
+.course-table button,
+.faculty-table-admin button {
+    padding: 7px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s ease;
+    font-size: 14px;
+}
+
+.edit-btn {
+    background-color: #ffc107;
+}
+
+.edit-btn:hover {
+    background-color: #d39e02;
+    transform: scale(1.05);
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #b32434;
+    transform: scale(1.05);
+}
+
+/* ------------------------------------------------------- */
+/* RESPONSIVE */
+/* ------------------------------------------------------- */
+@media (max-width: 768px) {
+    .admin-form-grid,
+    .faculty-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 18px;
+    }
+}
+
+.site-footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;       /* Center vertically */
+    margin-top: 30px;
+}
+
+.site-footer p {
+    color: #004aad;
+    font-size: 18px;
+    opacity: 0.9;
+    text-align: center;
+}
+
+/* ------------------------------------------------------- */
+/* LOGOUT BUTTON */
+/* ------------------------------------------------------- */
+
+.logout-form{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logout-btn{
+    padding: 8px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: "Times New Roman", serif;
+    color: #ffffff;
+    background: linear-gradient(120deg, #d60000, #b30000);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.logout-btn:hover{
+    background: linear-gradient(120deg, #004aad, #00337a);
+    box-shadow: 0 6px 15px rgba(0,74,173,0.45);
+    transform: translateY(-2px);
+}
+
+/* Click effect */
+.logout-btn:active{
+    transform: scale(0.95);
+    box-shadow: none;
+}

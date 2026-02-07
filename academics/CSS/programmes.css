@@ -1,0 +1,199 @@
+/* ----------------------------------------------------- */
+/* RESET + GLOBAL */
+/* ----------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", serif !important;
+}
+
+/* ----------------------------------------------------- */
+/* GLOBAL BODY (THEME BACKGROUND) */
+/* ----------------------------------------------------- */
+body {
+  background: linear-gradient(135deg, #004aad 0%, #ff002b 100%);
+  color: #222;
+  padding: 40px 0;
+  animation: fadeIn 1s ease-in;
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+/* ----------------------------------------------------- */
+/* MAIN CONTAINER */
+/* ----------------------------------------------------- */
+.container {
+  max-width: 950px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 22px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+  animation: slideUp 0.9s ease-in-out;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ----------------------------------------------------- */
+/* TITLES */
+/* ----------------------------------------------------- */
+.section-title , h1 , h2 , h3 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #004aad;
+  text-align: center;
+  margin: 20px auto 5px;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #ff002b;
+  display: inline-block;
+  text-shadow:
+    1px 1px 0px #ffffff,
+    -1px -1px 2px #c7c7c7,
+    2px 2px 4px rgba(0,0,0,0.35);
+}
+
+/* SUB TITLES */
+.sub {
+  font-size: 26px;
+  font-weight: 600;
+  color: #004aad;
+  text-align: center;
+  margin-top: 6px;
+  display: block;
+  text-shadow:
+    1px 1px 0px #ffffff,
+    -1px -1px 2px #c7c7c7,
+    2px 2px 4px rgba(0,0,0,0.35);
+}
+
+/* ----------------------------------------------------- */
+/* MARQUEE BOX */
+/* ----------------------------------------------------- */
+.marquee-box {
+  background: #003aa8;
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin: 35px auto 25px;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 0;
+}
+
+.marquee-text {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* ----------------------------------------------------- */
+/* COUNSELLING BLINK */
+/* ----------------------------------------------------- */
+.counselling-blink {
+  font-weight: bold;
+  color: #ff002b;
+  background: #ffe5e5;
+  padding: 14px 26px;
+  border-radius: 10px;
+  font-size: 22px;
+  animation: blinkCode 1s infinite alternate;
+  box-shadow: 0 4px 14px rgba(255,0,0,0.25);
+}
+
+/* ----------------------------------------------------- */
+/* LIST GRID */
+/* ----------------------------------------------------- */
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 30px auto 50px;
+  max-width: 880px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+@media (max-width: 700px) {
+  ul { grid-template-columns: 1fr; }
+}
+
+/* ----------------------------------------------------- */
+/* LIST ITEMS */
+/* ----------------------------------------------------- */
+ul li {
+  background: #e6f1ff;
+  border-left: 6px solid #004aad;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  transition: 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ⭐ FULL BOX CLICKABLE + NO UNDERLINE ⭐ */
+ul li a {
+  display: block;
+  padding: 18px 22px;
+  color: #002f6c;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+/* HOVER EFFECT */
+ul li:hover {
+  background: #ff002b;
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(255,0,0,0.35);
+}
+
+ul li:hover a {
+  color: #ffffff;
+  text-decoration: none !important;
+}
+
+/* ----------------------------------------------------- */
+/* FOOTER */
+/* ----------------------------------------------------- */
+footer {
+  margin-top: 60px;
+  background: #ffffff;
+  padding: 32px 22px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 58, 153, 0.25);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: #003aa8;
+  font-size: 18px;
+  width: 92%;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+  transition: 0.3s ease;
+}
+
+footer:hover {
+  transform: translateY(-4px);
+}
+
+/* ----------------------------------------------------- */
+/* ANIMATIONS */
+/* ----------------------------------------------------- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes blinkCode {
+  0% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
